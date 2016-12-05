@@ -63,13 +63,7 @@ public abstract class ObjectTree {
                 }
                 break;
             case BlockSapling.JUNGLE:
-                tree = new JungleTree();
-                break;
-            case BlockSapling.ACACIA:
-                tree = new SavannaTree();
-                break;
-            case BlockSapling.DARK_OAK:
-                tree = new DarkOakTree();
+                tree = new ObjectJungleTree();
                 break;
             case BlockSapling.OAK:
             default:
