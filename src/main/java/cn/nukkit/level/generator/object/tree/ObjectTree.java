@@ -13,7 +13,6 @@ import java.util.Map;
  * Nukkit Project
  */
 public abstract class ObjectTree {
-    
     public final Map<Integer, Boolean> overridable = new HashMap<Integer, Boolean>() {
         {
             put(Block.AIR, true);
@@ -48,9 +47,6 @@ public abstract class ObjectTree {
 
     public static void growTree(ChunkManager level, int x, int y, int z, NukkitRandom random, int type) {
         ObjectTree tree;
-        int i = 0;
-        int j = 0;
-        boolean flag = false;
         switch (type) {
             case BlockSapling.SPRUCE:
                 if (random.nextBoundedInt(39) == 0) {
@@ -67,7 +63,11 @@ public abstract class ObjectTree {
                 }
                 break;
             case BlockSapling.JUNGLE:
-                tree = new JungleTree();
+                if (random.nextBoundedInt(4) == 0) {
+                    tree = new BigJungleTree();
+                } else {
+                    tree = new JungleTree();
+                }
                 break;
             case BlockSapling.ACACIA:
                 tree = new SavannaTree();
@@ -81,6 +81,12 @@ public abstract class ObjectTree {
                 //todo: more complex treeeeeeeeeeeeeeeee
                 break;
         }
+
+        if (tree.canPlaceObject(level, x, y, z, random)) {
+            tree.placeObject(level, x, y, z, random);
+        }
+    }
+
 
     public boolean canPlaceObject(ChunkManager level, int x, int y, int z, NukkitRandom random) {
         int radiusToCheck = 0;
