@@ -25,7 +25,7 @@ public class Nukkit {
 
     public final static String VERSION = "1.0dev";
     public final static String API_VERSION = "1.0.0";
-    public final static String CODENAME = "蘋果(Apple)派(Pie)";
+    public final static String CODENAME = "NycuRO";
     public final static String MINECRAFT_VERSION = "v0.16.0 alpha";
     public final static String MINECRAFT_VERSION_NETWORK = "0.16.0";
 
