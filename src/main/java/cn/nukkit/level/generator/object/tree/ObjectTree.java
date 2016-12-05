@@ -10,16 +10,6 @@ import cn.nukkit.level.generator.object.BasicGenerator;
 import cn.nukkit.level.generator.object.mushroom.BigMushroom;
 import cn.nukkit.level.generator.object.BasicGenerator;
 
-import cn.nukkit.event.EventHandler;
-import cn.nukkit.event.Listener;
-import cn.nukkit.event.player.PlayerInteractEvent;
-import cn.nukkit.item.Item;
-import cn.nukkit.item.ItemDye;
-import cn.nukkit.level.Level;
-import cn.nukkit.math.BlockVector3;
-import cn.nukkit.math.NukkitRandom;
-import cn.nukkit.utils.DyeColor;
-
 import java.util.HashMap;
 import java.util.Map;
 
