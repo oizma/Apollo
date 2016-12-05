@@ -12,7 +12,7 @@ Apollo is one software for MCPE. Forked by Nukkit with more features and perform
 
 - You can Download Apollo.jar from CircleCI. Tap on latest build -> Tap Artifacts -> Tap build and DOWNLOAD!
 
-** [Jar Download at Circle CI][![CircleCI] (https://circleci.com/gh/NycuRO/Apollo.svg?style=svg)](https://circleci.com/gh/NycuRO/Apollo/tree/master/)
+** [Jar Download at Circle CI] [![CircleCI](https://circleci.com/gh/NycuRO/Apollo.svg?style=svg)](https://circleci.com/gh/NycuRO/Apollo)
  
 ![Apollo](http://i.imgur.com/KBlbnkp.png)
 
@@ -32,7 +32,14 @@ Apollo is one software for MCPE. Forked by Nukkit with more features and perform
 
 __Powerfull Server Software For Minecraft: Pocket Edition__
 
+- Apollo have chat on Gitter and Telegram. If you want to enter, you can with this links!
+
 [![Gitter](https://img.shields.io/gitter/room/NycuRO/Apollo-MCPE.js.svg?style=flat)](https://gitter.im/Apollo-MCPE/Lobby)
+
+[![Telegram](https://img.shields.io/gitter/room/NycuRO/Apollo-MCPE.js.svg?style=flat)](https://telegram.me/joinchat/DNhfUAvOIgdQDiFrv9BBNg)
+
+- If you want to watch more info with "Build", you can on Travis!
+
 [![Travis](https://img.shields.io/travis/NycuRO/Apollo.svg?style=flat)](https://travis-ci.org/NycuRO/Apollo)
 
 Introduction
