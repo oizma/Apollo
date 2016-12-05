@@ -63,11 +63,7 @@ public abstract class ObjectTree {
                 }
                 break;
             case BlockSapling.JUNGLE:
-                if (random.nextBoundedInt(4) == 0) {
-                    tree = new BigJungleTree();
-                } else {
-                    tree = new JungleTree();
-                }
+                tree = new JungleTree();
                 break;
             case BlockSapling.ACACIA:
                 tree = new SavannaTree();
