@@ -12,7 +12,7 @@ Apollo is one software for MCPE. Forked by Nukkit with more features and perform
 
 - You can Download Apollo.jar from CircleCI. Tap on latest build -> Tap Artifacts -> Tap build and DOWNLOAD!
 
-** [Jar Download at Circle CI] [CircleCI](https://circleci.com/gh/NycuRO/Apollo.svg?style=svg)](https://circleci.com/gh/NycuRO/Apollo)
+** [Jar Download at Circle CI] [CircleCI](https://circleci.com/gh/NycuRO/Apollo)
  
 ![Apollo](http://i.imgur.com/KBlbnkp.png)
 
