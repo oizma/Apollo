@@ -4,6 +4,8 @@ import cn.nukkit.block.Block;
 import cn.nukkit.block.BlockSapling;
 import cn.nukkit.level.ChunkManager;
 import cn.nukkit.math.NukkitRandom;
+import cn.nukkit.math.BlockVector3;
+import cn.nukkit.level.generator.object.tree.*;
 
 import java.util.HashMap;
 import java.util.Map;
