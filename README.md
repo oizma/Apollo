@@ -36,7 +36,7 @@ __Powerfull Server Software For Minecraft: Pocket Edition__
 
 [![Gitter](https://img.shields.io/gitter/room/NycuRO/Apollo-MCPE.js.svg?style=flat)](https://gitter.im/Apollo-MCPE/Lobby)
 
-[![Telegram](https://img.shields.io/gitter/room/NycuRO/Apollo-MCPE.js.svg?style=flat)](https://telegram.me/joinchat/DNhfUAvOIgdQDiFrv9BBNg)
+[![Telegram](https://telegram.me/joinchat/DNhfUAvOIgdQDiFrv9BBNg)]
 
 - If you want to watch more info with "Build", you can on Travis!
 
