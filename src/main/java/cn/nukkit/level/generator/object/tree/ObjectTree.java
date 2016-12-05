@@ -78,9 +78,6 @@ public abstract class ObjectTree {
                     tree = new ObjectBirchTree();
                 }
                 break;
-            case BlockSapling.JUNGLE:
-                tree = new ObjectJungleTree();
-                break;
             case BlockSapling.OAK:
             default:
                 tree = new ObjectOakTree();
@@ -115,8 +112,6 @@ public abstract class ObjectTree {
             int j = 0;
             boolean flag = false;
 
-            BasicGenerator worldgenerator = null;
-
             switch (sapling.getDamage()) {
                 case BlockSapling.JUNGLE:
                     jungle:
@@ -140,7 +135,6 @@ public abstract class ObjectTree {
                     worldgenerator = new SavannaTree();
                     break;
                 case BlockSapling.DARK_OAK:
-
                     spruce:
                     for (i = 0; i >= -1; --i) {
                         for (j = 0; j >= -1; --j) {
