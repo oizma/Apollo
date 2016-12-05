@@ -211,7 +211,7 @@ public class Server {
         this.console = new CommandReader();
         //todo: VersionString 现在不必要
 
-        if (!new File(this.dataPath + "nukkit.yml").exists()) {
+        if (!new File(this.dataPath + "apollo.yml").exists()) {
             this.getLogger().info(TextFormat.GREEN + "Welcome! Please choose a language first!");
             try {
                 String[] lines = Utils.readFile(this.getClass().getClassLoader().getResourceAsStream("lang/language.list")).split("\n");
@@ -232,13 +232,13 @@ public class Server {
                 }
             }
 
-            InputStream advacedConf = this.getClass().getClassLoader().getResourceAsStream("lang/" + language + "/nukkit.yml");
+            InputStream advacedConf = this.getClass().getClassLoader().getResourceAsStream("lang/" + language + "/apollo.yml");
             if (advacedConf == null) {
-                advacedConf = this.getClass().getClassLoader().getResourceAsStream("lang/" + fallback + "/nukkit.yml");
+                advacedConf = this.getClass().getClassLoader().getResourceAsStream("lang/" + fallback + "/apollo.yml");
             }
 
             try {
-                Utils.writeFile(this.dataPath + "nukkit.yml", advacedConf);
+                Utils.writeFile(this.dataPath + "apollo.yml", advacedConf);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
@@ -247,8 +247,8 @@ public class Server {
 
         this.console.start();
 
-        this.logger.info("Loading " + TextFormat.GREEN + "nukkit.yml" + TextFormat.WHITE + "...");
-        this.config = new Config(this.dataPath + "nukkit.yml", Config.YAML);
+        this.logger.info("Loading " + TextFormat.GREEN + "apollo.yml" + TextFormat.WHITE + "...");
+        this.config = new Config(this.dataPath + "apollo.yml", Config.YAML);
 
         this.logger.info("Loading " + TextFormat.GREEN + "server properties" + TextFormat.WHITE + "...");
         this.properties = new Config(this.dataPath + "server.properties", Config.PROPERTIES, new ConfigSection() {
