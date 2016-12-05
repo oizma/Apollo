@@ -5,7 +5,7 @@ import cn.nukkit.level.Level;
 import cn.nukkit.level.generator.noise.Noise;
 import cn.nukkit.math.NukkitRandom;
 import cn.nukkit.math.Vector3;
-import cn.nukkit.level.generator.object.EventListener;
+import cn.nukkit.level.generator.object.tree.EventListener;
 
 import java.util.HashMap;
 import java.util.Map;
