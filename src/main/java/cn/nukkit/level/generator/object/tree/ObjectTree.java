@@ -1,11 +1,24 @@
 package cn.nukkit.level.generator.object.tree;
 
-import cn.nukkit.block.Block;
-import cn.nukkit.block.BlockSapling;
+import cn.nukkit.block.*;
+import cn.nukkit.Player;
 import cn.nukkit.level.ChunkManager;
 import cn.nukkit.math.NukkitRandom;
 import cn.nukkit.math.BlockVector3;
-import cn.nukkit.level.generator.object.tree.*;
+import cn.nukkit.level.Level;
+import cn.nukkit.level.generator.object.BasicGenerator;
+import cn.nukkit.level.generator.object.mushroom.BigMushroom;
+import cn.nukkit.level.generator.object.BasicGenerator;
+
+import cn.nukkit.event.EventHandler;
+import cn.nukkit.event.Listener;
+import cn.nukkit.event.player.PlayerInteractEvent;
+import cn.nukkit.item.Item;
+import cn.nukkit.item.ItemDye;
+import cn.nukkit.level.Level;
+import cn.nukkit.math.BlockVector3;
+import cn.nukkit.math.NukkitRandom;
+import cn.nukkit.utils.DyeColor;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -15,6 +28,7 @@ import java.util.Map;
  * Nukkit Project
  */
 public abstract class ObjectTree {
+    
     public final Map<Integer, Boolean> overridable = new HashMap<Integer, Boolean>() {
         {
             put(Block.AIR, true);
@@ -49,6 +63,9 @@ public abstract class ObjectTree {
 
     public static void growTree(ChunkManager level, int x, int y, int z, NukkitRandom random, int type) {
         ObjectTree tree;
+        int i = 0;
+        int j = 0;
+        boolean flag = false;
         switch (type) {
             case BlockSapling.SPRUCE:
                 if (random.nextBoundedInt(39) == 0) {
@@ -65,7 +82,6 @@ public abstract class ObjectTree {
                 }
                 break;
             case BlockSapling.JUNGLE:
-                case BlockSapling.JUNGLE:
                     jungle:
                     for (i = 0; i >= -1; --i) {
                         for (j = 0; j >= -1; --j) {
