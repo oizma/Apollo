@@ -1,10 +1,10 @@
-package BiomeMaster.object.mushroom;
+package cn.nukkit.level.generator.object.mushroom;
 
-import cn.nukkit.level.generator.object.BasicGenerator;
 import cn.nukkit.block.Block;
 import cn.nukkit.block.BlockHugeMushroomBrown;
 import cn.nukkit.block.BlockHugeMushroomRed;
 import cn.nukkit.level.ChunkManager;
+import cn.nukkit.level.generator.object.BasicGenerator;
 import cn.nukkit.math.NukkitRandom;
 import cn.nukkit.math.Vector3;
 
