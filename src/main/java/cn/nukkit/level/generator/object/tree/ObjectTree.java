@@ -132,14 +132,14 @@ public abstract class ObjectTree {
                     }
                     break;
                 case BlockSapling.ACACIA:
-                    worldgenerator = new SavannaTree();
+                    tree = new SavannaTree();
                     break;
                 case BlockSapling.DARK_OAK:
                     spruce:
                     for (i = 0; i >= -1; --i) {
                         for (j = 0; j >= -1; --j) {
                             if (this.isTwoByTwoOfType(level, pos, i, j, BlockSapling.DARK_OAK)) {
-                                worldgenerator = new DarkOakTree();
+                                tree = new DarkOakTree();
                                 flag = true;
                                 break spruce;
                             }
@@ -166,7 +166,7 @@ public abstract class ObjectTree {
                 level.setBlock(b, air, true, false);
             }
 
-            if (!worldgenerator.generate(level, new NukkitRandom(), b.add(i, 0, j))) {
+            if (!tree.generate(level, new NukkitRandom(), b.add(i, 0, j))) {
                 if (flag) {
                     level.setBlock(b.add(i, 0, j), b, true, false);
                     level.setBlock(b.add(i + 1, 0, j), b, true, false);
