@@ -98,6 +98,7 @@ public abstract class ObjectTree {
         Player p = e.getPlayer();
         Block b = e.getBlock();
         Item item = e.getItem();
+        ObjectTree tree;
 
         if (!(item instanceof ItemDye) || ((ItemDye) item).getDyeColor() != DyeColor.WHITE) {
             return;
@@ -122,7 +123,7 @@ public abstract class ObjectTree {
                     for (i = 0; i >= -1; --i) {
                         for (j = 0; j >= -1; --j) {
                             if (this.isTwoByTwoOfType(level, pos, i, j, BlockSapling.DARK_OAK)) {
-                                worldgenerator = new JungleBigTree(10, 20, new BlockWood(BlockWood.JUNGLE), new BlockLeaves(BlockLeaves.JUNGLE));
+                                tree = new JungleBigTree(10, 20, new BlockWood(BlockWood.JUNGLE), new BlockLeaves(BlockLeaves.JUNGLE));
                                 flag = true;
                                 break jungle;
                             }
@@ -132,7 +133,7 @@ public abstract class ObjectTree {
                     if (!flag) {
                         i = 0;
                         j = 0;
-                        worldgenerator = new JungleTree(4 + new NukkitRandom().nextBoundedInt(7));
+                        tree = new JungleTree(4 + new NukkitRandom().nextBoundedInt(7));
                     }
                     break;
                 case BlockSapling.ACACIA:
