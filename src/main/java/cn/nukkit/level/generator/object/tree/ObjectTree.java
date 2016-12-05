@@ -63,7 +63,41 @@ public abstract class ObjectTree {
                 }
                 break;
             case BlockSapling.JUNGLE:
-                tree = new ObjectJungleTree();
+                case BlockSapling.JUNGLE:
+                    jungle:
+                    for (i = 0; i >= -1; --i) {
+                        for (j = 0; j >= -1; --j) {
+                            if (this.isTwoByTwoOfType(level, pos, i, j, BlockSapling.DARK_OAK)) {
+                                tree = new JungleBigTree(10, 20, new BlockWood(BlockWood.JUNGLE), new BlockLeaves(BlockLeaves.JUNGLE));
+                                flag = true;
+                                break jungle;
+                            }
+                        }
+                    }
+
+                    if (!flag) {
+                        i = 0;
+                        j = 0;
+                        tree = new JungleTree(4 + new NukkitRandom().nextBoundedInt(7));
+                    }
+                    break;
+            case BlockSapling.DARK_OAK:
+                    spruce:
+                    for (i = 0; i >= -1; --i) {
+                        for (j = 0; j >= -1; --j) {
+                            if (this.isTwoByTwoOfType(level, pos, i, j, BlockSapling.DARK_OAK)) {
+                                tree = new DarkOakTree();
+                                flag = true;
+                                break spruce;
+                            }
+                        }
+                    }
+                    if (!flag) {
+                        return;
+                    }
+                    break;
+            case BlockSapling.ACACIA:
+                tree = new new SavannaTree();
                 break;
             case BlockSapling.OAK:
             default:
@@ -131,5 +165,13 @@ public abstract class ObjectTree {
                 level.setBlockDataAt(x, y + yy, z, this.getType());
             }
         }
+    }
+    
+    private boolean isTwoByTwoOfType(Level level, BlockVector3 pos, int x, int z, int type) {
+        return this.isTypeAt(level, pos.add(x, 0, z), type) && this.isTypeAt(level, pos.add(x + 1, 0, z), type) && this.isTypeAt(level, pos.add(x, 0, z + 1), type) && this.isTypeAt(level, pos.add(x + 1, 0, z + 1), type);
+    }
+
+    private boolean isTypeAt(Level level, BlockVector3 pos, int type) {
+        return level.getBlockDataAt(pos.x, pos.y, pos.z) == type;
     }
 }
