@@ -1,4 +1,4 @@
-package cn.nukkit.level.object;
+package cn.nukkit.level.generator.object;
 
 import cn.nukkit.block.Block;
 import cn.nukkit.level.ChunkManager;
