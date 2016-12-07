@@ -27,7 +27,7 @@ public class EntityBoat extends EntityVehicle {
     @Override
     protected void initEntity() {
         super.initEntity();
-        this.dataProperties(DATA_VARIANT, DATA_TYPE_INT, this.namedTag.getInt("woodID"));
+        this.dataProperties.putInt(DATA_VARIANT, this.namedTag.getInt("woodID"));
         this.setHealth(4);
     }
 
