@@ -33,7 +33,7 @@ public class EntityBoat extends EntityVehicle {
 
     @Override
     public float getHeight() {
-        return 0.455f;
+        return 0.7f;
     }
 
     @Override
