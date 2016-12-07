@@ -20,8 +20,6 @@ public class EntityBoat extends EntityVehicle {
 
     public static final int NETWORK_ID = 90;
 
-    public static final int DATA_WOOD_ID = 20;
-
     public EntityBoat(FullChunk chunk, CompoundTag nbt) {
         super(chunk, nbt);
     }
@@ -29,16 +27,13 @@ public class EntityBoat extends EntityVehicle {
     @Override
     protected void initEntity() {
         super.initEntity();
-
-        this.dataProperties.putByte(DATA_WOOD_ID, this.namedTag.getByte("woodID"));
-
+        this.dataProperties.putByte(DATA_VARIANT, DATA_TYPE_INT, this.namedTag.getInt("woodID"));
         this.setHealth(4);
-        this.setMaxHealth(4);
     }
 
     @Override
     public float getHeight() {
-        return 0.7f;
+        return 0.455f;
     }
 
     @Override
@@ -53,7 +48,7 @@ public class EntityBoat extends EntityVehicle {
 
     @Override
     protected float getGravity() {
-        return 0.1f;
+        return 0.5f;
     }
 
     @Override
