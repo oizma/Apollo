@@ -41,12 +41,6 @@ public class EntityWolf extends EntityTameable {
     }
 
     @Override
-    public void saveNBT(){
-        super.saveNBT();
-        this.namedTag.putInt("Angry", this.angry);
-    }
-
-    @Override
     public String getName() {
         return this.getNameTag();
     }
