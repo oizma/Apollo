@@ -29,11 +29,12 @@ public class EntityBoat extends EntityVehicle {
         super.initEntity();
         this.dataProperties.putInt(DATA_VARIANT, this.namedTag.getInt("woodID"));
         this.setHealth(4);
+        this.setMaxHealth(4);
     }
 
     @Override
     public float getHeight() {
-        return 1.375f;
+        return 0.7f;
     }
 
     @Override
