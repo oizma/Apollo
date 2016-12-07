@@ -15,8 +15,7 @@ public class AddEntityPacket extends DataPacket {
         return NETWORK_ID;
     }
 
-    public long entityUniqueId;
-    public long entityRuntimeId;
+    public long eid;
     public int type;
     public float x;
     public float y;
@@ -27,7 +26,7 @@ public class AddEntityPacket extends DataPacket {
     public float yaw;
     public float pitch;
     public int modifiers;
-    public EntityMetadata metadata = new EntityMetadata();
+    public EntityMetadata metadata;
     public final Object[][] links = new Object[0][3];
 
     @Override
@@ -38,19 +37,22 @@ public class AddEntityPacket extends DataPacket {
     @Override
     public void encode() {
         this.reset();
-        this.putVarLong(this.entityUniqueId);
-        this.putVarLong(this.entityRuntimeId);
-        this.putUnsignedVarInt(this.type);
-        this.putVector3f(this.x, this.y, this.z);
-        this.putVector3f(this.speedX, this.speedY, this.speedZ);
-        this.putLFloat(this.yaw * (256f / 360f));
-        this.putLFloat(this.pitch * (256f / 360f));
-        this.putUnsignedVarInt(this.modifiers);
+        this.putLong(this.eid);
+        this.putInt(this.type);
+        this.putFloat(this.x);
+        this.putFloat(this.y);
+        this.putFloat(this.z);
+        this.putFloat(this.speedX);
+        this.putFloat(this.speedY);
+        this.putFloat(this.speedZ);
+        this.putFloat(this.yaw * 0.71f);
+        this.putFloat(this.pitch * 0.71f);
+        this.putInt(modifiers);
         this.put(Binary.writeMetadata(this.metadata));
-        this.putUnsignedVarInt(this.links.length);
-        for (Object[] link : this.links) {
-            this.putVarLong((long) link[0]);
-            this.putVarLong((long) link[1]);
+        this.putShort(this.links.length);
+        for (Object[] link : links) {
+            this.putLong((long) link[0]);
+            this.putLong((long) link[1]);
             this.putByte((byte) link[2]);
         }
     }
