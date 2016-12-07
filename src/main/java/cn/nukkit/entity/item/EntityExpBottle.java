@@ -40,12 +40,12 @@ public class EntityExpBottle extends EntityProjectile {
 
     @Override
     protected float getGravity() {
-        return 0.1f;
+        return 0.7f;
     }
 
     @Override
     protected float getDrag() {
-        return 0.01f;
+        return 0f;
     }
 
     public EntityExpBottle(FullChunk chunk, CompoundTag nbt) {
