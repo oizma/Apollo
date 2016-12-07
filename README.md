@@ -52,6 +52,7 @@ It has a few key advantages over other server software:
 * Having a friendly structure, it's easy to contribute to Apollo's development and rewrite plugins from other platforms into Apollo plugins.
 * More better Generator with MORE MORE Biomes
 * More performance on Entity , with Entity Al
+* Enchanting works perfectly with exact calculation!
 
 Build JAR file
 -------------
