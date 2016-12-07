@@ -18,8 +18,7 @@ public class BlockVector3 implements Cloneable {
         this.z = z;
     }
 
-    public BlockVector3() {
-    }
+    public BlockVector3() {}
 
     public BlockVector3 setComponents(int x, int y, int z) {
         this.x = x;
@@ -39,7 +38,6 @@ public class BlockVector3 implements Cloneable {
     public int getZ() {
         return this.z;
     }
-
     public Vector3 add(double x) {
         return this.add(x, 0, 0);
     }
@@ -184,11 +182,8 @@ public class BlockVector3 implements Cloneable {
         if (ob == this) return true;
 
         if (!(ob instanceof BlockVector3)) return false;
-
-        return
-                this.x == ((BlockVector3) ob).x &&
-                this.y == ((BlockVector3) ob).y &&
-                this.z == ((BlockVector3) ob).z;
+        BlockVector3 other = (BlockVector3) ob;
+        return this.x == other.x && this.z == other.z && this.y == other.y;
     }
 
     @Override
@@ -198,7 +193,7 @@ public class BlockVector3 implements Cloneable {
 
     @Override
     public String toString() {
-        return "BlockPosition(level=" + ",x=" + this.x + ",y=" + this.y + ",z=" + this.z + ")";
+        return "BlockPosition(x=" + this.x + ",y=" + this.y + ",z=" + this.z + ")";
     }
 
     @Override
