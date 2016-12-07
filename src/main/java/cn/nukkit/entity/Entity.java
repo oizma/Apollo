@@ -673,7 +673,8 @@ public abstract class Entity extends Location implements Metadatable {
     public void spawnTo(Player player) {
         if (!this.hasSpawned.containsKey(player.getLoaderId()) && player.usedChunks.containsKey(Level.chunkHash(this.chunk.getX(), this.chunk.getZ()))) {
             AddEntityPacket pk = new AddEntityPacket();
-            pk.eid = this.getId();
+            pk.entityUniqueId = this.getId();
+            pk.entityRuntimeId = this.getId();
             pk.type = this.getNetworkId();
             pk.x = (float) this.x;
             pk.y = (float) this.y;
