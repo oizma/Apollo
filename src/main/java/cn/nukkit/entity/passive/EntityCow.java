@@ -41,6 +41,12 @@ public class EntityCow extends EntityAnimal {
         }
         return 1.2f;
     }
+    
+    @Override
+    protected void initEntity() {
+        super.initEntity();
+        setMaxHealth(10);
+    }
 
     @Override
     public String getName() {
@@ -55,11 +61,5 @@ public class EntityCow extends EntityAnimal {
     @Override
     public int getNetworkId() {
         return NETWORK_ID;
-    }
-
-    @Override
-    protected void initEntity() {
-        super.initEntity();
-        setMaxHealth(10);
     }
 }
