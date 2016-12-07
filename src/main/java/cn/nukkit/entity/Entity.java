@@ -22,6 +22,7 @@ import cn.nukkit.nbt.tag.CompoundTag;
 import cn.nukkit.nbt.tag.DoubleTag;
 import cn.nukkit.nbt.tag.FloatTag;
 import cn.nukkit.nbt.tag.ListTag;
+import cn.nukkit.network.protocol.AddEntityPacket;
 import cn.nukkit.network.protocol.MobEffectPacket;
 import cn.nukkit.network.protocol.RemoveEntityPacket;
 import cn.nukkit.network.protocol.SetEntityDataPacket;
@@ -671,6 +672,20 @@ public abstract class Entity extends Location implements Metadatable {
 
     public void spawnTo(Player player) {
         if (!this.hasSpawned.containsKey(player.getLoaderId()) && player.usedChunks.containsKey(Level.chunkHash(this.chunk.getX(), this.chunk.getZ()))) {
+            AddEntityPacket pk = new AddEntityPacket();
+            pk.eid = this.getId();
+            pk.type = this.getNetworkId();
+            pk.x = (float) this.x;
+            pk.y = (float) this.y;
+            pk.z = (float) this.z;
+            pk.speedX = pk.speedY = pk.speedZ = 0;
+            pk.yaw = (float) this.yaw;
+            pk.pitch = (float) this.pitch;
+            pk.metadata = this.dataProperties;
+            pk.speedX = (float) this.motionX;
+            pk.speedY = (float) this.motionY;
+            pk.speedZ = (float) this.motionZ;
+            player.dataPacket(pk);
             this.hasSpawned.put(player.getLoaderId(), player);
         }
     }
@@ -1255,7 +1270,7 @@ public abstract class Entity extends Location implements Metadatable {
             AxisAlignedBB bb = this.boundingBox.clone();
             bb.minY -= 0.75;
 
-            this.onGround = this.level.getCollisionBlocks(bb).length > 0;
+            //this.onGround = this.level.getCollisionBlocks(bb).length > 0;
         }
         this.isCollided = this.onGround;
         this.updateFallState(this.onGround);
@@ -1341,7 +1356,7 @@ public abstract class Entity extends Location implements Metadatable {
 
                 this.boundingBox.offset(0, 0, dz);
 
-                this.boundingBox.offset(0, 0, dz);
+                //this.boundingBox.offset(0, 0, dz);
 
                 if ((cx * cx + cz * cz) >= (dx * dx + dz * dz)) {
                     dx = cx;
@@ -1361,6 +1376,7 @@ public abstract class Entity extends Location implements Metadatable {
             this.checkChunks();
 
             this.checkGroundState(movX, movY, movZ, dx, dy, dz);
+		
             this.updateFallState(this.onGround);
 
             if (movX != dx) {
