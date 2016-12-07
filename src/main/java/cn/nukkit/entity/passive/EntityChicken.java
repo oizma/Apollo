@@ -41,6 +41,14 @@ public class EntityChicken extends EntityAnimal {
         }
         return 0.7f;
     }
+    
+    @Override
+    public void initEntity(){
+        super.initEntity();
+
+        this.setMaxHealth(4);
+    }
+
 
     @Override
     public String getName() {
