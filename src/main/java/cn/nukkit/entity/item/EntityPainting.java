@@ -88,6 +88,12 @@ public class EntityPainting extends EntityHanging {
 
         super.spawnTo(player);
     }
+    
+    @Override
+    public void initEntity(){
+        super.initEntity();
+        this.setMaxHealth(1);
+    }
 
     @Override
     public void attack(EntityDamageEvent source) {
