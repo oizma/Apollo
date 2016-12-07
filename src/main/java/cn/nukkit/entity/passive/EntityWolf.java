@@ -23,33 +23,27 @@ public class EntityWolf extends EntityTameable {
 
     @Override
     public float getWidth() {
-        return 0.6f;
-    }
-
-    @Override
-    public float getLength() {
-        return 0.6f;
+        return 0.72f;
     }
 
     @Override
     public float getHeight() {
         if (isBaby()) {
-            return 0.8f; // No have information
+            return 0.6f;
         }
-        return 0.8f;
+        return 0.85f;
+    }
+    
+    @Override
+    protected void initEntity(){
+        super.initEntity();
+        this.setMaxHealth(8);
     }
 
     @Override
-    public double getSpeed(){
-        return 1.2;
-    }
-
-    @Override
-    public float getEyeHeight() {
-        if (isBaby()) {
-            return 0.8f * getHeight(); // No have information
-        }
-        return 0.8f * getHeight();
+    public void saveNBT(){
+        super.saveNBT();
+        this.namedTag.putInt("Angry", this.angry);
     }
 
     @Override
@@ -65,11 +59,5 @@ public class EntityWolf extends EntityTameable {
     @Override
     public int getNetworkId() {
         return NETWORK_ID;
-    }
-
-    @Override
-    public void initEntity() {
-        super.initEntity();
-        setMaxHealth(8);
     }
 }
