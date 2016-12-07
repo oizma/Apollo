@@ -16,7 +16,7 @@ public class EntityMushroom extends EntityAnimal {
 
     public static final int NETWORK_ID = 16;
 
-    public EntityCow(FullChunk chunk, CompoundTag nbt) {
+    public EntityMushroom(FullChunk chunk, CompoundTag nbt) {
         super(chunk, nbt);
         setAI(new MobAIUnion(new CreatureFleeAI(this, 32), new FollowItemAI(this, Item.WHEAT, 49, 32), new CreatureWanderAI(this)));
     }
