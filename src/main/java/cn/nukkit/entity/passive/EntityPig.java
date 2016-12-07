@@ -29,7 +29,7 @@ public class EntityPig extends EntityAnimal {
     @Override
     public float getHeight() {
         if (isBaby()) {
-            return 0.9f; // No have information
+            return 0.9f;
         }
         return 0.9f;
     }
@@ -37,9 +37,15 @@ public class EntityPig extends EntityAnimal {
     @Override
     public float getEyeHeight() {
         if (isBaby()) {
-            return 0.9f; // No have information
+            return 0.9f;
         }
         return 0.9f;
+    }
+    
+    @Override
+    protected void initEntity() {
+        super.initEntity();
+        setMaxHealth(10);
     }
 
     @Override
@@ -55,11 +61,5 @@ public class EntityPig extends EntityAnimal {
     @Override
     public int getNetworkId() {
         return NETWORK_ID;
-    }
-
-    @Override
-    protected void initEntity() {
-        super.initEntity();
-        setMaxHealth(10);
     }
 }
