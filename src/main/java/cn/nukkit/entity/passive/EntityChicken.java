@@ -45,7 +45,6 @@ public class EntityChicken extends EntityAnimal {
     @Override
     public void initEntity(){
         super.initEntity();
-
         this.setMaxHealth(4);
     }
 
@@ -63,11 +62,5 @@ public class EntityChicken extends EntityAnimal {
     @Override
     public int getNetworkId() {
         return NETWORK_ID;
-    }
-
-    @Override
-    protected void initEntity() {
-        super.initEntity();
-        setMaxHealth(4);
     }
 }
