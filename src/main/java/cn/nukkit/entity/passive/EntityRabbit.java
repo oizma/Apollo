@@ -23,28 +23,21 @@ public class EntityRabbit extends EntityAnimal {
 
     @Override
     public float getWidth() {
-        return 0.9f;
+        return 0.4f;
     }
 
     @Override
     public float getHeight() {
         if (isBaby()) {
-            return 0.9f; // No have information
+            return 0.4f;
         }
-        return 0.9f;
+        return 0.5f;
     }
-
+    
     @Override
-    public float getEyeHeight() {
-        if (isBaby()) {
-            return 0.9f; // No have information
-        }
-        return 0.9f;
-    }
-
-    @Override
-    public double getSpeed(){
-        return 1.2;
+    protected void initEntity() {
+        super.initEntity();
+        this.setMaxHealth(10);
     }
 
     @Override
@@ -60,11 +53,5 @@ public class EntityRabbit extends EntityAnimal {
     @Override
     public int getNetworkId() {
         return NETWORK_ID;
-    }
-
-    @Override
-    protected void initEntity() {
-        super.initEntity();
-        setMaxHealth(10);
     }
 }
