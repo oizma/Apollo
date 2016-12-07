@@ -15,7 +15,6 @@ import cn.nukkit.network.protocol.EntityEventPacket;
 import cn.nukkit.potion.Effect;
 import cn.nukkit.timings.Timings;
 import cn.nukkit.utils.BlockIterator;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -31,8 +30,12 @@ public abstract class EntityLiving extends Entity implements EntityDamageable {
     }
 
     @Override
-    protected float getGravity() {
+    public float getGravity() {
         return 0.08f;
+    }
+
+    public boolean hasGravity() {
+        return getGravity() != 0;
     }
 
     @Override
@@ -182,8 +185,6 @@ public abstract class EntityLiving extends Entity implements EntityDamageable {
     @Override
     public boolean entityBaseTick(int tickDiff) {
         Timings.livingEntityBaseTickTimer.startTiming();
-        this.setDataFlag(DATA_FLAGS, DATA_FLAG_BREATHING, !this.isInsideOfWater());
-
         boolean hasUpdate = super.entityBaseTick(tickDiff);
 
         if (this.isAlive()) {
@@ -195,7 +196,7 @@ public abstract class EntityLiving extends Entity implements EntityDamageable {
 
             if (!this.hasEffect(Effect.WATER_BREATHING) && this.isInsideOfWater()) {
                 if (this instanceof EntityWaterAnimal) {
-                    this.setDataProperty(new ShortEntityData(DATA_AIR, 400));
+                    this.setDataProperty(new ShortEntityData(DATA_AIR, 300));
                 } else {
                     hasUpdate = true;
                     int airTicks = this.getDataPropertyShort(DATA_AIR) - tickDiff;
@@ -221,7 +222,7 @@ public abstract class EntityLiving extends Entity implements EntityDamageable {
 
                     this.setDataProperty(new ShortEntityData(DATA_AIR, airTicks));
                 } else {
-                    this.setDataProperty(new ShortEntityData(DATA_AIR, 400));
+                    this.setDataProperty(new ShortEntityData(DATA_AIR, 300));
                 }
             }
         }
