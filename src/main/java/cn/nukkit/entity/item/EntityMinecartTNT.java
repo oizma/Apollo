@@ -39,5 +39,30 @@ public class EntityMinecartTNT extends EntityMinecartEmpty {
         }
         explosion.explodeB();
     }
+    
+    @Override
+    protected void initEntity() {
+        super.initEntity();
+        this.dataProperties.putInt(TYPE_TNT);
+    }
 
+    @Override
+    public void spawnTo(Player player) {
+        AddEntityPacket pk = new AddEntityPacket();
+        pk.entityUniqueId = this.getId();
+        pk.entityRuntimeId = this.getId();
+        pk.type = EntityMinecartEmpty.NETWORK_ID;
+        pk.x = (float) this.x;
+        pk.y = (float) this.y;
+        pk.z = (float) this.z;
+        pk.speedX = 0;
+        pk.speedY = 0;
+        pk.speedZ = 0;
+        pk.yaw = 0;
+        pk.pitch = 0;
+        pk.metadata = this.dataProperties;
+        player.dataPacket(pk);
+
+        super.spawnTo(player);
+    }
 }
