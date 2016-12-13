@@ -14,6 +14,11 @@ import cn.nukkit.network.protocol.EntityEventPacket;
 public class EntityMinecartEmpty extends EntityVehicle {
 
     public static final int NETWORK_ID = 84;
+    
+    public static final int TYPE_NORMAL = 1;
+    public static final int TYPE_CHEST = 2;
+    public static final int TYPE_HOPPER = 3;
+    public static final int TYPE_TNT = 4;
 
     public static final int DATA_VEHICLE_DISPLAY_BLOCK = 20;
     public static final int DATA_VEHICLE_DISPLAY_DATA = 20;
