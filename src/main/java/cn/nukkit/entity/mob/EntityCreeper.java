@@ -35,8 +35,8 @@ public class EntityCreeper extends EntityMob implements EntityExplosive {
     private int bombTime = 0;
 
     @Override
-    public double getSpeed() {
-        return super.getSpeed() - 0.02 * bombTime;
+    public float getSpeed() {
+        return 9;
     }
 
     @Override
@@ -125,15 +125,8 @@ public class EntityCreeper extends EntityMob implements EntityExplosive {
     }
 
     public Item[] getDrops(){
-        if(this.lastDamageCause instanceof EntityDamageByEntityEvent){
-            switch(FastRandom.random.random(2)){
-                case 0:
-                    return new Item[]{Item.get(Item.FLINT, 0, 1)};
-                case 1:
-                    return new Item[]{Item.get(Item.GUNPOWDER, 0, 1)};
-                case 2:
-                    return new Item[]{Item.get(Item.REDSTONE_DUST, 0, 1)};
-            }
+        if (this.lastDamageCause instanceof EntityDamageByEntityEvent){
+            return new Item[]{Item.get(Item.GUNPOWDER, 0, 2)};
         }
         return new Item[0];
     }
