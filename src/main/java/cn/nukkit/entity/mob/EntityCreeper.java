@@ -36,7 +36,7 @@ public class EntityCreeper extends EntityMob implements EntityExplosive {
 
     @Override
     public double getSpeed() {
-        return 9f;
+        return super.getSpeed();
     }
 
     @Override
