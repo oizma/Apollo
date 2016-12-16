@@ -35,8 +35,8 @@ public class EntityCreeper extends EntityMob implements EntityExplosive {
     private int bombTime = 0;
 
     @Override
-    public float getSpeed() {
-        return 9;
+    public double getSpeed() {
+        return 9f;
     }
 
     @Override
