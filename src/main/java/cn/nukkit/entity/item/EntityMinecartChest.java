@@ -25,7 +25,7 @@ public class EntityMinecartChest extends EntityMinecartEmpty {
     @Override
     protected void initEntity() {
         super.initEntity();
-        this.dataProperties.putInt(TYPE_CHEST);
+        //this.dataProperties.putInt(TYPE_CHEST);
     }
 
     @Override
