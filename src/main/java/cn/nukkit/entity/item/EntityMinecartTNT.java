@@ -44,7 +44,7 @@ public class EntityMinecartTNT extends EntityMinecartEmpty {
     @Override
     protected void initEntity() {
         super.initEntity();
-        this.dataProperties.putInt(TYPE_TNT);
+        //this.dataProperties.putInt(TYPE_TNT);
     }
 
     @Override
