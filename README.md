@@ -56,9 +56,11 @@ It has a few key advantages over other server software:
 
 Build JAR file
 -------------
-- `git submodule update --init`
-- `mvn clean`
-- `mvn package`
+- Download .zip file
+- De-arhive 
+- Install Maven
+- Enter on file ( cd filename )
+- Use: `mvn package`
 
 Running
 -------------
